@@ -4,6 +4,6 @@ namespace Timetable
 {
     class Student
     {
-        private String name;
+        private string name;
     }
 }
