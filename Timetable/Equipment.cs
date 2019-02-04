@@ -2,7 +2,7 @@ using System;
 
 namespace Timetable
 {
-    class Student
+    class Equipment
     {
         private String name;
     }
