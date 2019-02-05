@@ -1,8 +1,9 @@
 <persons>
-<student><name>255211</name><semester>MIB</semester></student>
-<student><name>255212</name><semester>OMB</semester></student>
-<student><name>255213</name><semester>MIB</semester></student>
-<student><name>255214</name><semester>MKB</semester></student>
-<student><name>255215</name><semester>OMB</semester></student>
-<student><name>255216</name><semester>MKB</semester></student>
+<student name = "255211" semester = "MI"></student>
+<student name = "255212" semester = "MI"></student>
+<student name = "255213" semester = "OM"></student>
+<student name = "255214" semester = "MI"></student>
+<student name = "255215" semester = "OM"></student>
+<student name = "255216" semester = "MK"></student>
+<lecturer name = "Müller" subject1 = "A" subject2 = "B"></lecturer>
 </persons>
