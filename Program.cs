@@ -8,12 +8,14 @@ namespace SoftwareDesign
     {
         public static List<Student> Students = new List<Student>();
         public static List<Lecturer> Lecturers = new List<Lecturer>();
+        public static List<Classroom> Classrooms = new List<Classroom>();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             readData();
             int c = Students.Count;
             int d = Lecturers.Count;
+            int e = Classrooms.Count;
             foreach (Student i in Students)
             {
                 Console.WriteLine(i.name + " " + i.semester);
@@ -24,6 +26,15 @@ namespace SoftwareDesign
                 Console.WriteLine(i.name + " " + i.subjects[0] + i.subjects[1] + i.subjects[2] + i.subjects[3]);
             }
             Console.WriteLine("Es sind " + d + " Dozenten registriert.");
+            foreach (Classroom i in Classrooms)
+            {
+                Console.WriteLine(i.name + " " + i.building);
+                foreach (Equipment j in i.equipment)
+                {
+                    Console.WriteLine(j.name);
+                }
+            }
+            Console.WriteLine("Es sind " + e + " Räume registriert.");
         }
 
         private static void readData()
@@ -60,9 +71,29 @@ namespace SoftwareDesign
                                     if (reader.Name == "name")
                                         lecturer.name = reader.Value;
                                     if (reader.Name.Contains("subject"))
+                                        lecturer.subjects[Int32.Parse(reader.Name.Remove(0, 7))] = reader.Value;
+                                }
+                            }
+                            break;
+                        case "classroom":
+                            Classroom classroom = new Classroom();
+                            Classrooms.Add(classroom);
+                            if (reader.HasAttributes)
+                            {
+                                while (reader.MoveToNextAttribute())
+                                {
+                                    if (reader.Name == "name")
+                                        classroom.name = reader.Value;
+                                    if (reader.Name == "seats")
+                                        classroom.seats = Int32.Parse(reader.Value);
+                                    if (reader.Name == "building")
+                                        classroom.building = reader.Value;
+                                    if (reader.Name.Contains("equipment"))
                                     {
-                                        lecturer.subjects[Int32.Parse(reader.Name.Remove(0,7))] = reader.Value;
-                                    }
+                                        Equipment equipment = new Equipment();
+                                        equipment.name = reader.Value;
+                                        classroom.equipment.Add(equipment);
+                                    } 
                                 }
                             }
                             break;

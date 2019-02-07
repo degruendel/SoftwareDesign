@@ -6,4 +6,6 @@
 <student name = "255215" semester = "OM"></student>
 <student name = "255216" semester = "MK"></student>
 <lecturer name = "Müller" subject1 = "A" subject2 = "B"></lecturer>
+<classroom name = "102" building = "A" equipment1 = "E1" equipment2 = "E2" equipment3 = "E3"></classroom>
+<classroom name = "103" building = "A" equipment1 = "F1" equipment2 = "F2" equipment3 = "F3" equipment4 = "F4"></classroom>
 </persons>
