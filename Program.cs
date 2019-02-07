@@ -28,6 +28,10 @@ namespace SoftwareDesign
                 {
                     Console.WriteLine(j.name);
                 }
+                foreach (string k in i.presence)
+                {
+                    Console.WriteLine(k);
+                }
             }
             Console.WriteLine("Es sind " + d + " Dozenten registriert.");
             foreach (Classroom i in Classrooms)
@@ -80,6 +84,8 @@ namespace SoftwareDesign
                                         subject.name = reader.Value;
                                         lecturer.subjects.Add(subject);
                                     }
+                                    if (reader.Name.Contains("presence"))
+                                        lecturer.presence.Add(reader.Value);
                                 }
                             }
                             break;
