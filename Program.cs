@@ -23,7 +23,11 @@ namespace SoftwareDesign
             Console.WriteLine("Es sind " + c + " Studenten registriert.");
             foreach (Lecturer i in Lecturers)
             {
-                Console.WriteLine(i.name + " " + i.subjects[0] + i.subjects[1] + i.subjects[2] + i.subjects[3]);
+                Console.WriteLine(i.name);
+                foreach (Subject j in i.subjects)
+                {
+                    Console.WriteLine(j.name);
+                }
             }
             Console.WriteLine("Es sind " + d + " Dozenten registriert.");
             foreach (Classroom i in Classrooms)
@@ -71,7 +75,11 @@ namespace SoftwareDesign
                                     if (reader.Name == "name")
                                         lecturer.name = reader.Value;
                                     if (reader.Name.Contains("subject"))
-                                        lecturer.subjects[Int32.Parse(reader.Name.Remove(0, 7))] = reader.Value;
+                                    {
+                                        Subject subject = new Subject();
+                                        subject.name = reader.Value;
+                                        lecturer.subjects.Add(subject);
+                                    }
                                 }
                             }
                             break;
