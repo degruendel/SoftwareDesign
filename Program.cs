@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
+using System.Linq;
 
 namespace SoftwareDesign
 {
     class Program
     {
+        public static List<Semester> Semesters = new List<Semester>();
         public static List<Student> Students = new List<Student>();
         public static List<Lecturer> Lecturers = new List<Lecturer>();
         public static List<Classroom> Classrooms = new List<Classroom>();
@@ -13,7 +15,10 @@ namespace SoftwareDesign
         {
             Console.WriteLine("Hello World!");
             readData();
-            int c = Students.Count;
+            GetInfo("MIB1", Semesters);
+            //Console.WriteLine(semester.name);
+            
+            /* int c = Students.Count;
             int d = Lecturers.Count;
             int e = Classrooms.Count;
             foreach (Student i in Students)
@@ -42,9 +47,16 @@ namespace SoftwareDesign
                     Console.WriteLine(j.name);
                 }
             }
-            Console.WriteLine("Es sind " + e + " Räume registriert.");
+            Console.WriteLine("Es sind " + e + " Räume registriert."); */
+            //Lecturer L = new Lecturer();
+            //L.info("Müller");
         }
 
+        public static void GetInfo(string objectname, List<T> list)
+        {
+            var foundobject = listname.Find(x => x.name == objectname);
+            foundobject.info();
+        }
         private static void readData()
         {
             XmlTextReader reader = new XmlTextReader("data.xml");
@@ -54,6 +66,27 @@ namespace SoftwareDesign
                 {
                     switch (reader.Name)
                     {
+                        case "semester":
+                            Semester semester = new Semester();
+                            Semesters.Add(semester);
+                            if (reader.HasAttributes)
+                            {
+                                while (reader.MoveToNextAttribute())
+                                {
+                                    if (reader.Name == "name") 
+                                        semester.name = reader.Value;
+                                        semester.stage = Int32.Parse(semester.name.Remove(0, 3));
+                                    if (reader.Name == "course")
+                                        semester.course = reader.Value;
+                                    if (reader.Name.Contains("subject"))
+                                    {
+                                        Subject subject = new Subject();
+                                        subject.name = reader.Value;
+                                        semester.subjects.Add(subject);
+                                    }
+                                }
+                            }
+                            break;
                         case "student":
                             Student student = new Student();
                             Students.Add(student);
@@ -64,7 +97,8 @@ namespace SoftwareDesign
                                     if (reader.Name == "name")
                                         student.name = reader.Value;
                                     if (reader.Name == "semester")
-                                        student.semester = reader.Value;
+                                        Console.WriteLine("i");
+                                        //student.semester = reader.Value;
                                 }
                             }
                             break;

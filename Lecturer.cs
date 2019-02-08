@@ -8,5 +8,10 @@ namespace SoftwareDesign
         public string name;
         public List<Subject> subjects = new List<Subject>();
         public List<string> presence = new List<string>();
+
+        public void info()
+        {
+            Console.WriteLine("Type: Lecturer");
+        }
     }
 }

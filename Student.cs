@@ -5,6 +5,11 @@ namespace SoftwareDesign
     class Student
     {
         public string name;
-        public string semester;
+        public Semester semester;
+
+        public void info()
+        {
+            Console.WriteLine("Type: Student");
+        }
     }
 }

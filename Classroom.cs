@@ -10,5 +10,10 @@ namespace SoftwareDesign
         public int seats;
         public string building;
         public List<Equipment> equipment = new List<Equipment>();
+
+        public void info()
+        {
+            Console.WriteLine("Type: Classroom");
+        }
     }
 }
