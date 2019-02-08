@@ -9,11 +9,6 @@ namespace SoftwareDesign
         public bool availability = true;
         public int seats;
         public string building;
-        public List<Equipment> equipment = new List<Equipment>();
-
-        public void info()
-        {
-            Console.WriteLine("Type: Classroom");
-        }
+        public List<string> equipment = new List<string>();
     }
 }

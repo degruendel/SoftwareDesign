@@ -15,9 +15,8 @@ namespace SoftwareDesign
         {
             Console.WriteLine("Hello World!");
             readData();
-            GetInfo("MIB1", Semesters);
             //Console.WriteLine(semester.name);
-            
+
             /* int c = Students.Count;
             int d = Lecturers.Count;
             int e = Classrooms.Count;
@@ -51,12 +50,6 @@ namespace SoftwareDesign
             //Lecturer L = new Lecturer();
             //L.info("Müller");
         }
-
-        public static void GetInfo(string objectname, List<T> list)
-        {
-            var foundobject = listname.Find(x => x.name == objectname);
-            foundobject.info();
-        }
         private static void readData()
         {
             XmlTextReader reader = new XmlTextReader("data.xml");
@@ -73,11 +66,10 @@ namespace SoftwareDesign
                             {
                                 while (reader.MoveToNextAttribute())
                                 {
-                                    if (reader.Name == "name") 
+                                    if (reader.Name == "name")
                                         semester.name = reader.Value;
-                                        semester.stage = Int32.Parse(semester.name.Remove(0, 3));
-                                    if (reader.Name == "course")
-                                        semester.course = reader.Value;
+                                    if (reader.Name == "students")
+                                        semester.students = Int32.Parse(reader.Value);
                                     if (reader.Name.Contains("subject"))
                                     {
                                         Subject subject = new Subject();
@@ -87,25 +79,9 @@ namespace SoftwareDesign
                                 }
                             }
                             break;
-                        case "student":
-                            Student student = new Student();
-                            Students.Add(student);
-                            if (reader.HasAttributes)
-                            {
-                                while (reader.MoveToNextAttribute())
-                                {
-                                    if (reader.Name == "name")
-                                        student.name = reader.Value;
-                                    if (reader.Name == "semester")
-                                        Console.WriteLine("i");
-                                        //student.semester = reader.Value;
-                                }
-                            }
-                            break;
                         case "lecturer":
                             Lecturer lecturer = new Lecturer();
                             Lecturers.Add(lecturer);
-
                             if (reader.HasAttributes)
                             {
                                 while (reader.MoveToNextAttribute())
@@ -141,7 +117,7 @@ namespace SoftwareDesign
                                         Equipment equipment = new Equipment();
                                         equipment.name = reader.Value;
                                         classroom.equipment.Add(equipment);
-                                    } 
+                                    }
                                 }
                             }
                             break;

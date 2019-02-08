@@ -7,11 +7,6 @@ namespace SoftwareDesign
     {
         public string name;
         public string description;
-        public List<Equipment> requirements = new List<Equipment>();
-
-        public void info()
-        {
-            Console.WriteLine("Type: Subject");
-        }
+        public List<string> requirements = new List<string>();
     }
 }
