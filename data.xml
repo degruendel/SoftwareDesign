@@ -6,6 +6,6 @@
 <semester name = "MIB6" students = "24" subject1 = "Produktmanagement" subject2 = "Sprachenmodul"></semester>
 
 <lecturer name = "Müller" subject1 = "A" subject2 = "B" presence1 = "10:00" presence2 = "11:00" presence3 = "13:00"></lecturer>
-<classroom name = "102" building = "A" equipment1 = "E1" equipment2 = "E2" equipment3 = "E3"></classroom>
-<classroom name = "103" building = "A" equipment1 = "F1" equipment2 = "F2" equipment3 = "F3" equipment4 = "F4"></classroom>
+<classroom name = "102" seats = "30" building = "I" equipment1 = "E1" equipment2 = "E2" equipment3 = "E3"></classroom>
+<classroom name = "103" seats = "40" building = "I" equipment1 = "F1" equipment2 = "F2" equipment3 = "F3" equipment4 = "F4"></classroom>
 </data>

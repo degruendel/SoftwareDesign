@@ -8,13 +8,13 @@ namespace SoftwareDesign
     class Program
     {
         public static List<Semester> Semesters = new List<Semester>();
-        public static List<Student> Students = new List<Student>();
         public static List<Lecturer> Lecturers = new List<Lecturer>();
         public static List<Classroom> Classrooms = new List<Classroom>();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             readData();
+            createTimetable();
             //Console.WriteLine(semester.name);
 
             /* int c = Students.Count;
@@ -49,6 +49,19 @@ namespace SoftwareDesign
             Console.WriteLine("Es sind " + e + " Räume registriert."); */
             //Lecturer L = new Lecturer();
             //L.info("Müller");
+        }
+
+        private static void createTimetable()
+        {
+            foreach (Semester s in Semesters)
+            {
+                List<Classroom> matchsize = Classrooms.FindAll(c => c.seats >= s.students);
+                foreach (Classroom c in matchsize)
+                {
+                    
+                    Console.WriteLine("For " + s.name + " Raum: " + c.name + " " + c.seats);
+                }
+            }
         }
         private static void readData()
         {
@@ -114,9 +127,7 @@ namespace SoftwareDesign
                                         classroom.building = reader.Value;
                                     if (reader.Name.Contains("equipment"))
                                     {
-                                        Equipment equipment = new Equipment();
-                                        equipment.name = reader.Value;
-                                        classroom.equipment.Add(equipment);
+                                        classroom.equipment.Add(reader.Value);
                                     }
                                 }
                             }
