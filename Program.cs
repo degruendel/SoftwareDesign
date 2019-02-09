@@ -10,6 +10,7 @@ namespace SoftwareDesign
         public static List<Semester> Semesters = new List<Semester>();
         public static List<Lecturer> Lecturers = new List<Lecturer>();
         public static List<Classroom> Classrooms = new List<Classroom>();
+        public static List<Subject> allSubjects = new List<Subject>();
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
@@ -51,18 +52,71 @@ namespace SoftwareDesign
             //L.info("Müller");
         }
 
-        private static void createTimetable()
+        public static void createTimetable()
         {
-            foreach (Semester s in Semesters)
+            foreach (Semester sem in Semesters)
             {
-                List<Classroom> matchsize = Classrooms.FindAll(c => c.seats >= s.students);
-                foreach (Classroom c in matchsize)
+                int studentamount = sem.students;
+                foreach (Subject sub in sem.subjects)
                 {
-                    
-                    Console.WriteLine("For " + s.name + " Raum: " + c.name + " " + c.seats);
+                    List<Classroom> matchingrooms = new List<Classroom>();
+                    foreach (Classroom cla in Classrooms)
+                    {
+                        if (cla.availability == true && cla.seats >= studentamount)
+                        {
+                            foreach (string req in sub.requirements)
+                            {
+                                if (cla.equipment.Contains(req))
+                                    matchingrooms.Add(cla);
+                            }
+                        }
+                    }
+                    Classroom smallest = matchingrooms[0];
+                    foreach (Classroom mat in matchingrooms)
+                    {
+                        if (mat.seats < smallest.seats)
+                            smallest = mat;
+                    }
+                    Console.WriteLine("Found: " + smallest.name);
                 }
             }
         }
+        /* private static void createTimetable()
+        {
+            foreach (Semester semester in Semesters)
+            {
+                foreach (Subject subject in semester.subjects)
+                {
+                    //Sucht ale Räume, die groß genug sind
+                    List<Classroom> matchsize = Classrooms.FindAll(room => room.seats >= semester.students || room.availability == true);
+                    
+                    foreach (Classroom room in matchsize.ToList())
+                    {
+                        foreach (String require in subject.requirements)
+                        {
+                            //Equipment nicht ausreichend
+                            if (!room.equipment.Contains(require))
+                            {
+                                matchsize.Remove(room);
+                            }
+                        }
+                    }
+                    bool isEmpty = !matchsize.Any();
+                        if (isEmpty)
+                            Console.WriteLine("Keine Räume verfügbar.");
+                        else
+                        {
+                            int countseats;
+                            foreach (Classroom room in matchsize.ToList)
+                            {
+                                countseats = room.seats - semester.students;
+
+                            }
+                        }
+                            Console.WriteLine("For " + semester.name + " " + subject.name + " Raum: " + matchsize.All.name + " " + matchsize.All.seats);
+                }
+            }
+        } */
         private static void readData()
         {
             XmlTextReader reader = new XmlTextReader("data.xml");
@@ -85,9 +139,15 @@ namespace SoftwareDesign
                                         semester.students = Int32.Parse(reader.Value);
                                     if (reader.Name.Contains("subject"))
                                     {
-                                        Subject subject = new Subject();
-                                        subject.name = reader.Value;
-                                        semester.subjects.Add(subject);
+                                        Subject ssubject = new Subject();
+                                        ssubject.name = reader.Value;
+                                        Subject subrequire = new Subject();
+                                        foreach (Subject s in allSubjects)
+                                        {
+                                            if (s.name == ssubject.name)
+                                                ssubject.requirements = s.requirements;
+                                        }
+                                        semester.subjects.Add(ssubject);
                                     }
                                 }
                             }
@@ -103,9 +163,9 @@ namespace SoftwareDesign
                                         lecturer.name = reader.Value;
                                     if (reader.Name.Contains("subject"))
                                     {
-                                        Subject subject = new Subject();
-                                        subject.name = reader.Value;
-                                        lecturer.subjects.Add(subject);
+                                        Subject lsubject = new Subject();
+                                        lsubject.name = reader.Value;
+                                        lecturer.subjects.Add(lsubject);
                                     }
                                     if (reader.Name.Contains("presence"))
                                         lecturer.presence.Add(reader.Value);
@@ -126,12 +186,26 @@ namespace SoftwareDesign
                                     if (reader.Name == "building")
                                         classroom.building = reader.Value;
                                     if (reader.Name.Contains("equipment"))
-                                    {
                                         classroom.equipment.Add(reader.Value);
-                                    }
                                 }
                             }
                             break;
+                            case "subject":
+                                Subject subject = new Subject();
+                                allSubjects.Add(subject);
+                                if(reader.HasAttributes)
+                                {
+                                    while (reader.MoveToNextAttribute())
+                                    {
+                                        if (reader.Name == "name")
+                                            subject.name = reader.Value;
+                                        if (reader.Name == "description")
+                                            subject.description = reader.Value;
+                                        if (reader.Name.Contains("requirement"))
+                                            subject.requirements.Add(reader.Value);
+                                    }
+                                }
+                                break;
                     }
                 }
             }

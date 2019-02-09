@@ -1,11 +1,35 @@
 <data>
-<semester name = "MIB1" students = "35" subject1 = "MINT Grundlagen" subject2 = "allg BWL" subject3 = "Programmierung" subject4 = "Mediengestaltung" subject5 = "Medientechnik"></semester>
+<subject name = "MINT Grundlagen" description = "" requirement1 = "Beamer"></subject>
+<subject name = "allg BWL" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Programmierung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Mediengestaltung" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Medientechnik" description = "" requirement1 = "Kamera"></subject>
+<subject name = "Mathematik" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Medienwirtschaft" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Interaktive Systeme" description = "" requirement1 = "Computer"></subject>
+<subject name = "UX Design" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Computergrafik" description = "" requirement1 = "Computer"></subject>
+<subject name = "Projektstudium" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "Kommsys" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Softwaredesign" description = "" requirement1 = "Computer"></subject>
+<subject name = "GDV" description = "" requirement1 = "Computer"></subject>
+<subject name = "Verteilte Anwendungen" description = "" requirement1 = "Computer"></subject>
+<subject name = "Medienproduktion" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Produktmanagement" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Sprachenmodul" description = "" requirement1 = "Tafel"></subject>
+
+<semester name = "MIB1" students = "35" subject1 = "MINT Grundlagen"></semester>
+<!--
 <semester name = "MIB2" students = "30" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
 <semester name = "MIB4" students = "25" subject1 = "Projektstudium" subject2 = "Kommsys" subject3 = "Softwaredesign" subject4 = "GDV"></semester>
 <semester name = "MIB5" students = "23" subject1 = "Projektstudium" subject2 = "Verteilte Anwendungen" subject3 = "Medienproduktion"></semester>
 <semester name = "MIB6" students = "24" subject1 = "Produktmanagement" subject2 = "Sprachenmodul"></semester>
-
+-->
 <lecturer name = "Müller" subject1 = "A" subject2 = "B" presence1 = "10:00" presence2 = "11:00" presence3 = "13:00"></lecturer>
-<classroom name = "102" seats = "30" building = "I" equipment1 = "E1" equipment2 = "E2" equipment3 = "E3"></classroom>
-<classroom name = "103" seats = "40" building = "I" equipment1 = "F1" equipment2 = "F2" equipment3 = "F3" equipment4 = "F4"></classroom>
+
+<classroom name = "102" seats = "30" building = "I" equipment1 = "Beamer"></classroom>
+<classroom name = "103" seats = "40" building = "I" equipment1 = "Beamer"></classroom>
+<classroom name = "104" seats = "36" building = "I" equipment1 = "Beamer"></classroom>
+<classroom name = "105" seats = "35" building = "I" equipment1 = "Tafel"></classroom>
+
 </data>
