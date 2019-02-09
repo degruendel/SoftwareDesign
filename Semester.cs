@@ -8,5 +8,6 @@ namespace SoftwareDesign
         public string name;
         public int students;
         public List<Subject> subjects = new List<Subject>();
+        public string[] availability = new string[50];
     }
 }

@@ -18,14 +18,17 @@
 <subject name = "Produktmanagement" description = "" requirement1 = "Tafel"></subject>
 <subject name = "Sprachenmodul" description = "" requirement1 = "Tafel"></subject>
 
-<semester name = "MIB1" students = "35" subject1 = "MINT Grundlagen"></semester>
+<semester name = "MIB1" students = "35" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
 <!--
 <semester name = "MIB2" students = "30" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
 <semester name = "MIB4" students = "25" subject1 = "Projektstudium" subject2 = "Kommsys" subject3 = "Softwaredesign" subject4 = "GDV"></semester>
 <semester name = "MIB5" students = "23" subject1 = "Projektstudium" subject2 = "Verteilte Anwendungen" subject3 = "Medienproduktion"></semester>
 <semester name = "MIB6" students = "24" subject1 = "Produktmanagement" subject2 = "Sprachenmodul"></semester>
 -->
-<lecturer name = "Müller" subject1 = "A" subject2 = "B" presence1 = "10:00" presence2 = "11:00" presence3 = "13:00"></lecturer>
+<lecturer name = "Müller" subject1 = "Computergrafik" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Schneider" subject1 = "Mathematik" subject2 = "MINT Grundlagen" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Krach" subject1 = "UX Design" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Wölfel" subject1 = "Interaktive Systeme" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 
 <classroom name = "102" seats = "30" building = "I" equipment1 = "Beamer"></classroom>
 <classroom name = "103" seats = "40" building = "I" equipment1 = "Beamer"></classroom>
