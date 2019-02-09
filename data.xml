@@ -18,21 +18,29 @@
 <subject name = "Produktmanagement" description = "" requirement1 = "Tafel"></subject>
 <subject name = "Sprachenmodul" description = "" requirement1 = "Tafel"></subject>
 
-<semester name = "MIB1" students = "35" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
-<!--
+<semester name = "MIB1" students = "35" subject1 = "MINT Grundlagen" subject2 = "allg BWL" subject3 = "Programmierung" subject4 = "Mediengestaltung" subject5 = "Medientechnik"></semester>
 <semester name = "MIB2" students = "30" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
 <semester name = "MIB4" students = "25" subject1 = "Projektstudium" subject2 = "Kommsys" subject3 = "Softwaredesign" subject4 = "GDV"></semester>
 <semester name = "MIB5" students = "23" subject1 = "Projektstudium" subject2 = "Verteilte Anwendungen" subject3 = "Medienproduktion"></semester>
 <semester name = "MIB6" students = "24" subject1 = "Produktmanagement" subject2 = "Sprachenmodul"></semester>
--->
-<lecturer name = "Müller" subject1 = "Computergrafik" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Schneider" subject1 = "Mathematik" subject2 = "MINT Grundlagen" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Krach" subject1 = "UX Design" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Wölfel" subject1 = "Interaktive Systeme" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 
-<classroom name = "102" seats = "30" building = "I" equipment1 = "Beamer"></classroom>
-<classroom name = "103" seats = "40" building = "I" equipment1 = "Beamer"></classroom>
-<classroom name = "104" seats = "36" building = "I" equipment1 = "Beamer"></classroom>
-<classroom name = "105" seats = "35" building = "I" equipment1 = "Tafel"></classroom>
+<lecturer name = "Müller" subject1 = "Computergrafik" subject2 = "Programmierung" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Schneider" subject1 = "Mathematik" subject2 = "MINT Grundlagen" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Krach" subject1 = "UX Design" subject2 = "Mediengestaltung" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Wölfel" subject1 = "Interaktive Systeme" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Schulten" subject1 = "allg BWL" subject2 = "Medienwirtschaft" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Hottong" subject1 = "Medientechnik" presence = "0,1,2,3,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+
+<classroom name = "001" seats = "60" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Lautsprecher" equipment4 = "Tageslichtprojektor"></classroom>
+<classroom name = "002" seats = "60" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Lautsprecher" equipment4 = "Tageslichtprojektor"></classroom>
+<classroom name = "003" seats = "40" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Whiteboard" equipment4 = "Tageslichtprojektor"></classroom>
+<classroom name = "004" seats = "30" building = "I" equipment1 = "Beamer" equipment2 = "Whiteboard" equipment3 = "Computer"></classroom>
+<classroom name = "005" seats = "25" building = "I" equipment1 = "Computer" equipment2 = "Whiteboard" equipment3 = "Beamer"></classroom>
+<classroom name = "006" seats = "27" building = "I" equipment1 = "Whiteboard" equipment2 = "Tafel"></classroom>
+<classroom name = "101" seats = "30" building = "I" equipment1 = "Beamer" equipment2 = "Tafel"></classroom>
+<classroom name = "102" seats = "40" building = "I" equipment1 = "Computer"></classroom>
+<classroom name = "103" seats = "36" building = "I" equipment1 = "Tafel" equipment2 = "Computer"></classroom>
+<classroom name = "104" seats = "35" building = "I" equipment1 = "Whiteboard" equipment2 = "Computer"></classroom>
+
 
 </data>

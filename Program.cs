@@ -61,13 +61,48 @@ namespace SoftwareDesign
                     if (lecturer.availability[i] == "free")
                     {
                         int selectorsemester = 0;
+                        bool semesterIsFree = false;
+                        while (semesterIsFree == false)
+                        {
+                            Semester checkSemester = Semesters[selectorsemester];
+                            if (checkSemester.availability[i] == "reserved")
+                            {
+                                selectorsemester++;
+                            }
+                            else
+                            {
+                                semesterIsFree = true;
+                            }
+                        }
                         Semester selectedsemester = Semesters[selectorsemester];
                         foreach (Subject subject in lecturer.subjects)
                         {
                             if (selectedsemester.subjects.Exists(e => e.name == subject.name))
                             {
+                                List<Classroom> matchingRooms = new List<Classroom>();
+                                foreach (Classroom room in Classrooms)
+                                {
+                                    if (room.availability[i] != "reserved" && room.seats >= selectedsemester.students)
+                                    {
+                                        foreach (string require in subject.requirements)
+                                        {
+                                            if (room.equipment.Contains(require))
+                                            {
+                                                matchingRooms.Add(room);
+                                            }
+                                        }
+                                    }
+                                }
+                                Classroom smallest = matchingRooms[0];
+                                foreach (Classroom matching in matchingRooms)
+                                {
+                                    if (matching.seats < smallest.seats)
+                                        smallest = matching;
+                                }
+                                smallest.availability[i] = "reserved";
                                 selectedsemester.subjects.Remove(subject);
-                                Console.WriteLine(lecturer.name + " unterrichtet " + subject.name + " in " + selectedsemester.name + " im Block " + i);
+                                selectedsemester.availability[i] = "reserved";
+                                Console.WriteLine(lecturer.name + " unterrichtet " + subject.name + " in " + selectedsemester.name + " im Block " + i + " im Raum " + smallest.name);
                             }
                         }
                     }
