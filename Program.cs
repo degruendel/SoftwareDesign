@@ -56,28 +56,20 @@ namespace SoftwareDesign
         {
             foreach (Lecturer lecturer in Lecturers)
             {
-                for (int i = 0; i<50; i++)
+                for (int i = 0; i < 50; i++)
                 {
                     if (lecturer.availability[i] == "free")
                     {
                         int selectorsemester = 0;
                         Semester selectedsemester = Semesters[selectorsemester];
-                        bool found = false;
-                        int selectorsubject = 0;
-                        while (found == false)
+                        foreach (Subject subject in lecturer.subjects)
                         {
-                            //Subject selectedsubject = selectedsemester.subjects[selectorsubject];
-                            foreach (Subject subject in lecturer.subjects)
+                            if (selectedsemester.subjects.Exists(e => e.name == subject.name))
                             {
-                                Subject subject = lecturer.subjects[j];
-                                if (selectedsemester.subjects.Exists(e => e.name == subject.name))
-                                {
-                                    selectedsemester.subjects.Remove(subject);
-                                    Console.WriteLine(lecturer.name + " unterrichtet " + subject.name + " in " + selectedsemester.name + " im Block " + i);
-                                    found = true;
-                                }
+                                selectedsemester.subjects.Remove(subject);
+                                Console.WriteLine(lecturer.name + " unterrichtet " + subject.name + " in " + selectedsemester.name + " im Block " + i);
                             }
-                        } 
+                        }
                     }
                 }
             }
