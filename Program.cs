@@ -19,7 +19,7 @@ namespace SoftwareDesign
             CreateTimetable();
             UserInput();
         }
-        public static void CreateTimetable()
+        private static void CreateTimetable()
         {
             int lengthLecturer = _allLecturers.Count();
             int lenghtSemester = _allSemesters.Count();
@@ -116,7 +116,7 @@ namespace SoftwareDesign
             stringBuilder = selectedSubject.Name + "\n" + selectedLecturer.Name + "\n" + selectedSemester.Name;
             currentTimetable.Table[b] = stringBuilder;
         }
-        public static void PrintTimetable(string name)
+        private static void PrintTimetable(string name)
         {
             Console.WriteLine("\nStundenplan für " + name + "\n");
             Timetable print = _allTimetables.Find(x => x.Name == name);
