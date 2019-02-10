@@ -20,6 +20,73 @@ namespace SoftwareDesign
 
         public static void createTimetable()
         {
+            int lengthlecturer = Lecturers.Count();
+            int lenghtsemester = Semesters.Count();
+            int lenghtblocks = 50;
+
+            for (int b = 0; b < lenghtblocks; b++)
+            {
+
+                for (int a = 0; a < lengthlecturer; a++)
+                {
+                    Lecturer selectedLecturer = Lecturers[a];
+                    for (int c = 0; c < lenghtsemester; c++)
+                    {
+                        Semester selectedSemester = Semesters[c];
+                        if (selectedSemester.availability[b] != "reserved")
+                        {
+                            foreach (Subject selectedSubject in selectedLecturer.subjects)
+                            {
+                                if (selectedLecturer.availability[b] == "free")
+                                {
+                                    if (selectedSemester.subjects.Exists(e => e.name == selectedSubject.name))
+                                    {
+                                        List<Classroom> matchingRooms = new List<Classroom>();
+                                        foreach (Classroom room in Classrooms)
+                                        {
+                                            if (room.availability[b] != "reserved" && room.seats >= selectedSemester.students)
+                                            {
+                                                foreach (string require in selectedSubject.requirements)
+                                                {
+                                                    if (room.equipment.Contains(require))
+                                                    {
+                                                        matchingRooms.Add(room);
+                                                    }
+
+                                                }
+
+                                            }
+                                        }
+                                        bool isEmpty = !matchingRooms.Any();
+                                        if (isEmpty == false)
+                                        {
+                                            Classroom smallest = matchingRooms[0];
+                                            foreach (Classroom matching in matchingRooms)
+                                            {
+                                                if (matching.seats < smallest.seats)
+                                                {
+                                                    smallest = matching;
+                                                }
+                                            }
+                                            smallest.availability[b] = "reserved";
+                                            selectedSemester.subjects.Remove(selectedSubject);
+                                            selectedSemester.availability[b] = "reserved";
+                                            selectedLecturer.availability[b] = "reserved";
+                                            Console.WriteLine(selectedLecturer.name + " unterrichtet " + selectedSubject.name + " in " + selectedSemester.name + " im Block " + b + " im Raum " + smallest.name);
+
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* public static void createTimetable()
+        {
             foreach (Lecturer lecturer in Lecturers)
             {
                 for (int i = 0; i < 50; i++)
@@ -75,7 +142,7 @@ namespace SoftwareDesign
                     }
                 }
             }
-        }
+        } */
 
         private static void readData()
         {
