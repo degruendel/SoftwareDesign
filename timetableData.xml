@@ -1,82 +1,144 @@
 <data>
-<subject name = "MINT Grundlagen" description = "" requirement1 = "Beamer" requirement2 = "Tafel"></subject>
-<subject name = "allg BWL" description = "" requirement1 = "Tafel"></subject>
-<subject name = "Programmierung" description = "" requirement1 = "Computer"></subject>
-<subject name = "Mediengestaltung" description = "" requirement1 = "Beamer"></subject>
-<subject name = "Medientechnik" description = "" requirement1 = "Camera"></subject>
-<subject name = "Mathematik" description = "" requirement1 = "Tafel"></subject>
-<subject name = "Medienwirtschaft" description = "" requirement1 = "Tafel"></subject>
-<subject name = "Interaktive Systeme" description = "" requirement1 = "Computer"></subject>
-<subject name = "UX Design" description = "" requirement1 = "Beamer"></subject>
-<subject name = "Computergrafik" description = "" requirement1 = "Computer"></subject>
-<subject name = "Projektstudium" description = "" requirement1 = "Whiteboard"></subject>
-<subject name = "Kommsys" description = "" requirement1 = "Beamer"></subject>
-<subject name = "Softwaredesign" description = "" requirement1 = "Computer"></subject>
-<subject name = "GDV" description = "" requirement1 = "Computer"></subject>
-<subject name = "Verteilte Anwendungen" description = "" requirement1 = "Computer"></subject>
-<subject name = "Medienproduktion" description = "" requirement1 = "Beamer"></subject>
-<subject name = "Produktmanagement" description = "" requirement1 = "Tafel"></subject>
-<subject name = "Sprachenmodul" description = "" requirement1 = "Tafel"></subject>
-<subject name = "AV Produktion" description = "" requirement1 = "Camera"></subject>
-<subject name = "Webtechnologien" description = "" requirement1 = "Computer"></subject>
-<subject name = "Webdesign" description = "" requirement1 = "Computer"></subject>
-<subject name = "Medienmanagement" description = "" requirement1 = "Beamer"></subject>
-<subject name = "Streaming" description = "" requirement1 = "Computer"></subject>
-<subject name = "Interface Design" description = "" requirement1 = "Tafel"></subject>
-<subject name = "Medienkonzeption" description = "" requirement1 = "Whiteboard" requirement2 = "Beamer"></subject>
-<subject name = "Interaktive Anwendungen" description = "" requirement1 = "Computer" requirement2 = "Beamer"></subject>
-<subject name = "Kreativkonzeption" description = "" requirement1 = "Tafel" requirement2 = "Beamer"></subject>
-<subject name = "Textkonzeption" description = "" requirement1 = "Tafel"></subject>
-<subject name = "Elearning" description = "" requirement1 = "Computer"></subject>
-<subject name = "Marketingkonzeption" description = "" requirement1 = "Marketingkonzeption" requirement2 = "Tafel"></subject>
-<subject name = "Medientheorie" description = "" requirement1 = "Whiteboard"></subject>
-<subject name = "GLF TV" description = "" requirement1 = "Camera"></subject>
+<subject name = "3D Character" description = "" requirement1 = "Computer"></subject>
+
 <subject name = "Astrofoto" description = "" requirement1 = "Camera"></subject>
+<subject name = "Audiotechnik" description = "" requirement1 = "Camera"></subject>
+<subject name = "AV Produktion Praktikum" description = "" requirement1 = "Camera"></subject>
+<subject name = "AV Produktion Vorlesung" description = "" requirement1 = "Camera"></subject>
+
+<subject name = "Computergrafik Seminar" description = "" requirement1 = "Computer"></subject>
+<subject name = "Computergrafik Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Creative Writing" description = "" requirement1 = "Computer"></subject>
+
+<subject name = "Datenverarbeitung Medienproduktion" description = "" requirement1 = "Computer"></subject>
+<subject name = "Digitale AVTechnik" description = "" requirement1 = "Beamer"></subject>
+
+<subject name = "EBusiness" description = "" requirement1 = "Computer"></subject>
+<subject name = "Elearning Vorlesung" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Elearning Übung" description = "" requirement1 = "Computer"></subject>
+<subject name = "E-Commerce" description = "" requirement1 = "Whiteboard"></subject>
+
+<subject name = "GDV Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "GDV Übung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Geometrie" description = "" requirement1 = "Tafel"></subject>
+<subject name = "GLF TV" description = "" requirement1 = "Camera"></subject>
+<subject name = "Grundlagen BWL" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Grundlagen Unternehmensgründung" description = "" requirement1 = "Tafel"></subject>
+
+<subject name = "Ideenentwicklung" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "Interaktive Anwendungen Vorlesung" description = "" requirement1 = "Computer" requirement2 = "Beamer"></subject>
+<subject name = "Interaktive Anwendungen Praktikum" description = "" requirement1 = "Computer" requirement2 = "Beamer"></subject>
+<subject name = "Interaktive Systeme Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Interaktive Systeme Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Interface Design Praktikum" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Interface Design Vorlesung" description = "" requirement1 = "Tafel"></subject>
+<subject name = "IT Produktmanagement" description = "" requirement1 = "Beamer"></subject>
+
+<subject name = "Kommsys Praktikum" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Kommsys Vorlesung" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Konzeption" description = "" requirement1 = "Tafel" requirement2 = "Beamer"></subject>
+<subject name = "Kommunikationswirtschaft" description = "" requirement1 = "Tafel" requirement2 = "Beamer"></subject>
+
+<subject name = "Markenführung" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Marketing" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Mathematik in Medien und Informatik" description = "" requirement1 = "Beamer" requirement2 = "Tafel"></subject>
+<subject name = "Mathematik Praktikum" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Mathematik Seminar" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Mathematik Vorlesung" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Medienanalyse Vorlesung" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Mediengestaltung Praktikum" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Mediengestaltung Vorlesung" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Medienkonzeption Seminar" description = "" requirement1 = "Whiteboard" requirement2 = "Beamer"></subject>
+<subject name = "Medienökonomie" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Medienprodukte" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Medienpsychologie" description = "" requirement1 = "Beamer"></subject>
+<subject name = "Medientechnik Praktikum" description = "" requirement1 = "Camera"></subject>
+<subject name = "Medientheorie" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "MINT Praktikum" description = "" requirement1 = "Beamer" requirement2 = "Tafel"></subject>
+
+<subject name = "Physik in Medien und Informatik" description = "" requirement1 = "Beamer" requirement2 = "Tafel"></subject>
+<subject name = "Produktmanagement" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Programmierung Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Programmierung Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Projektmanagement" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "Projektstudium" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "Photografie" description = "" requirement1 = "Camera"></subject>
+
+<subject name = "Softwaredesign Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Softwaredesign Seminar" description = "" requirement1 = "Computer"></subject>
 <subject name = "Spieleentwicklung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Sprachenmodul 1" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Sprachenmodul 2" description = "" requirement1 = "Tafel"></subject>
+<subject name = "Streaming Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Streaming Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Storytelling" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "SEO" description = "" requirement1 = "Beamer"></subject>
+
+<subject name = "Typografie" description = "" requirement1 = "Tafel"></subject>
+
+<subject name = "UX Design Seminar" description = "" requirement1 = "Beamer"></subject>
+<subject name = "UX Design Vorlesung" description = "" requirement1 = "Beamer"></subject>
+
+<subject name = "Verteilte Anwendungen Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Verteilte Anwendungen Vorlesung" description = "" requirement1 = "Computer"></subject>
+
+<subject name = "Videotechnik" description = "" requirement1 = "Camera"></subject>
+<subject name = "VFX" description = "" requirement1 = "Beamer"></subject>
+
+<subject name = "Webdesign Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Webdesign Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Webtechnologien Praktikum" description = "" requirement1 = "Computer"></subject>
+<subject name = "Webtechnologien Vorlesung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Wissenschaftliches Schreiben" description = "" requirement1 = "Beamer"></subject>
+
 <subject name = "Zeichnen" description = "" requirement1 = "Tafel"></subject>
 
-<semester name = "MIB1" students = "35" subject1 = "MINT Grundlagen" subject2 = "allg BWL" subject3 = "Programmierung" subject4 = "Mediengestaltung" subject5 = "Medientechnik"></semester>
-<semester name = "MIB2" students = "30" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
-<semester name = "MIB4" students = "25" subject1 = "Projektstudium" subject2 = "Kommsys" subject3 = "Softwaredesign" subject4 = "GDV"></semester>
-<semester name = "MIB5" students = "23" subject1 = "Projektstudium" subject2 = "Verteilte Anwendungen" subject3 = "Medienproduktion"></semester>
-<semester name = "MIB6" students = "24" subject1 = "Produktmanagement" subject2 = "Sprachenmodul"></semester>
+<semester name = "MIB1" students = "35" subject1 = "Mathematik in Medien und Informatik" subject2 = "Physik in Medien und Informatik" subject3 = "MINT Praktikum" subject4 = "Grundlagen BWL" subject5 = "Grundlagen Unternehmensgründung" subject6 = "Programmierung Vorlesung" subject7 = "Programmierung Praktikum" subject8 = "Mediengestaltung Vorlesung" subject9 = "Mediengestaltung Praktikum" subject10 = "Medienpsychologie" subject11 = "Audiotechnik" subject12 = "Medientechnik Praktikum" subject13 = "Videotechnik"></semester>
+<semester name = "MIB2" students = "30" subject1 = "Mathematik Vorlesung" subject2 = "Mathematik Praktikum"  subject3 = "Mathematik Seminar" subject4 = "Marketing" subject5 = "Medienökonomie" subject6 = "Interaktive Systeme Vorlesung" subject7 = "Interaktive Systeme Praktikum" subject8 = "UX Design Vorlesung" subject9 = "UX Design Seminar" subject10 = "Computergrafik Vorlesung" subject11 = "Computergrafik Seminar"></semester>
+<semester name = "MIB4" students = "25" subject1 = "Projektstudium" subject2 = "Projektmanagement" subject3 = "Wissenschaftliches Schreiben" subject4 = "Kommsys Vorlesung" subject5 = "Kommsys Praktikum" subject6 = "Softwaredesign Seminar" subject7 = "Softwaredesign Praktikum" subject8 = "GDV Vorlesung" subject9 = "GDV Übung"></semester>
+<semester name = "MIB5" students = "23" subject1 = "Projektstudium" subject2 = "Verteilte Anwendungen Vorlesung" subject3 = "Verteilte Anwendungen Praktikum" subject4 = "Digitale AVTechnik" subject5 = "Datenverarbeitung Medienproduktion"></semester>
+<semester name = "MIB6" students = "24" subject1 = "IT Produktmanagement" subject2 = "Medienprodukte" subject3 = "Sprachenmodul 1" subject4 = "Sprachenmodul 2"></semester>
 
-<semester name = "OMB1" students = "40" subject1 = "MINT Grundlagen" subject2 = "allg BWL" subject3 = "Programmierung" subject4 = "Mediengestaltung" subject5 = "Medientechnik"></semester>
-<semester name = "OMB2" students = "37" subject1 = "Computergrafik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "AV Produktion"></semester>
-<semester name = "OMB4" students = "26" subject1 = "Projektstudium" subject2 = "Webtechnologien" subject3 = "Webdesign" subject4 = "Medienmanagement"></semester>
-<semester name = "OMB5" students = "34" subject1 = "Projektstudium" subject2 = "Streaming" subject3 = "Interface Design"></semester>
-<semester name = "OMB6" students = "32" subject1 = "Produktmanagement" subject2 = "Sprachenmodul"></semester>
+<semester name = "OMB1" students = "40" subject1 = "Mathematik in Medien und Informatik" subject2 = "Physik in Medien und Informatik" subject3 = "MINT Praktikum" subject4 = "Grundlagen BWL" subject5 = "Grundlagen Unternehmensgründung" subject6 = "Programmierung Vorlesung" subject7 = "Programmierung Praktikum" subject8 = "Mediengestaltung Vorlesung" subject9 = "Mediengestaltung Praktikum" subject10 = "Medienpsychologie" subject11 = "Audiotechnik" subject12 = "Medientechnik Praktikum" subject13 = "Videotechnik"></semester>
+<semester name = "OMB2" students = "37" subject1 = "Computergrafik Vorlesung" subject2 = "Computergrafik Seminar" subject3 = "Geometrie" subject4 = "Marketing" subject5 = "Medienökonomie" subject6 = "Interaktive Systeme Vorlesung" subject7 = "Interaktive Systeme Praktikum" subject8 = "UX Design Vorlesung" subject9 = "UX Design Seminar" subject10 = "AV Produktion Vorlesung" subject11 = "AV Produktion Praktikum"></semester>
+<semester name = "OMB4" students = "26" subject1 = "Projektstudium" subject2 = "Projektmanagement" subject3 = "Wissenschaftliches Schreiben" subject4 = "Webtechnologien Vorlesung" subject5 = "Webtechnologien Praktikum" subject6 = "Webdesign Vorlesung" subject7 = "Webdesign Praktikum" subject8 = "EBusiness" subject9 = "Kommunikationswirtschaft"></semester>
+<semester name = "OMB5" students = "34" subject1 = "Projektstudium" subject2 = "Streaming Vorlesung" subject3 = "Streaming Praktikum" subject4 = "Interface Design Vorlesung" subject5 = "Interface Design Praktikum"></semester>
+<semester name = "OMB6" students = "32" subject1 = "Produktmanagement" subject2 = "Marketing" subject3 = "Sprachenmodul 1" subject4 = "Sprachenmodul 2"></semester>
 
-<semester name = "MKB1" students = "38" subject1 = "Medienkonzeption" subject2 = "allg BWL" subject3 = "Interaktive Anwendungen" subject4 = "Mediengestaltung" subject5 = "Medientechnik"></semester>
-<semester name = "MKB2" students = "37" subject1 = "Computergrafik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Anwendungen" subject4 = "UX Design" subject5 = "AV Produktion"></semester>
-<semester name = "MKB4" students = "35" subject1 = "Projektstudium" subject2 = "Kreativkonzeption" subject3 = "Textkonzeption" subject4 = "Elearning"></semester>
-<semester name = "MKB5" students = "20" subject1 = "Projektstudium" subject2 = "Interface Design" subject3 = "Marketingkonzeption"></semester>
-<semester name = "MKB6" students = "30" subject1 = "Medientheorie" subject2 = "Sprachenmodul"></semester>
+<semester name = "MKB1" students = "38" subject1 = "Medienanalyse Vorlesung" subject2 = "Medienkonzeption Seminar" subject3 = "Grundlagen BWL" subject4 = "Grundlagen Unternehmensgründung" subject5 = "Interaktive Anwendungen Vorlesung" subject6 = "Interaktive Anwendungen Praktikum" subject7 = "Mediengestaltung Vorlesung" subject8 = "Mediengestaltung Praktikum" subject9 = "Medienpsychologie" subject10 = "Audiotechnik" subject11 = "Medientechnik Praktikum" subject12 = "Videotechnik"></semester>
+<semester name = "MKB2" students = "37" subject1 = "Computergrafik Vorlesung" subject2 = "Computergrafik Seminar" subject3 = "Marketing" subject4 = "Medienökonomie" subject5 = "Interaktive Anwendungen Vorlesung" subject6 = "Interaktive Anwendungen Praktikum" subject7 = "UX Design Vorlesung" subject8 = "UX Design Seminar" subject9 = "AV Produktion Vorlesung" subject10 = "AV Produktion Praktikum"></semester>
+<semester name = "MKB4" students = "26" subject1 = "Projektstudium" subject2 = "Projektmanagement" subject3 = "Wissenschaftliches Schreiben" subject4 = "Ideenentwicklung" subject5 = "Konzeption" subject6 = "Storytelling" subject7 = "Creative Writing" subject8 = "Elearning Vorlesung" subject9 = "Elearning Übung"></semester>
+<semester name = "MKB5" students = "20" subject1 = "Projektstudium" subject2 = "Interface Design Vorlesung" subject3 = "Interface Design Praktikum" subject4 = "Markenführung" subject5 = "Marketing"></semester>
+<semester name = "MKB6" students = "30" subject1 = "Medientheorie" subject2 = "Sprachenmodul 1" subject3 = "Sprachenmodul 2"></semester>
 
-<semester name = "WPM" students = "20" subject1 = "GLF TV" subject2 = "Astrofoto" subject3 = "Spieleentwicklung" subject4 = "Zeichnen"></semester>
+<semester name = "WPM" students = "20" subject1 = "GLF TV" subject2 = "Astrofoto" subject3 = "Spieleentwicklung" subject4 = "Zeichnen" subject5 = "3D Character" subject6 = "E-Commerce" subject7 = "VFX" subject8 = "Typografie" subject9 = "SEO" subject10 = "Photografie" ></semester>
 
-<lecturer name = "Müller" subject1 = "Computergrafik" subject2 = "Programmierung" presence = "12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Schneider" subject1 = "Mathematik" subject2 = "MINT Grundlagen" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Krach" subject1 = "UX Design" subject2 = "Mediengestaltung" subject3 = "Interface Design" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Wölfel" subject1 = "Interaktive Systeme" subject2 = "Webdesign" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Schulten" subject1 = "allg BWL" subject2 = "Medienwirtschaft" subject3 = "Medienmanagement" subject4 = "Marketingkonzeption" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Hottong" subject1 = "Medientechnik" subject2 = "Streaming" presence = "0,1,2,3,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Aichele" subject1 = "AV Produktion" subject2 = "Kreativkonzeption" subject3 = "Medientheorie" subject4 = "GLF TV" presence = "16,17,18,30,31,32"></lecturer>
-<lecturer name = "Anders" subject1 = "Webtechnologien" subject2 = "Projektstudium" presence = "2,3,4,12,13,14,22,23,24"></lecturer>
-<lecturer name = "Delloro" subject1 = "Programmierung" subject2 = "Interaktive Anwendungen" subject3 = "Elearning" presence = "10,11,12,13,26,27,28,29,30,31,32"></lecturer>
-<lecturer name = "Comes" subject1 = "Textkonzeption" subject2 = "UX Design" subject3 = "Projektstudium" presence = "40,41,42,43"></lecturer>
-<lecturer name = "Teacher 1" subject1 = "Sprachenmodul" presence = "16,17,18,26,27,28,36,37,38"></lecturer>
-<lecturer name = "Waldowski" subject1 = "GDV" presence = "16,17,18,26,27,28"></lecturer>
-<lecturer name = "Dittler" subject1 = "Astrofoto" presence = "36,37,38,39"></lecturer>
+<lecturer name = "Müller" subject1 = "Computergrafik Vorlesung" subject2 = "Programmierung Vorlesung" presence = "12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Schneider" subject1 = "Mathematik Vorlesung" subject2 = "Mathematik in Medien und Informatik" subject3 = "Physik in Medien und Informatik" subject4 = "MINT Praktikum" subject5 = "Mathematik Praktikum" subject6 = "Mathematik Seminar" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Krach" subject1 = "UX Design Vorlesung" subject2 = "Mediengestaltung Vorlesung" subject3 = "Mediengestaltung Praktikum" subject4 = "Interface Design Vorlesung" subject5 = "Interface Design Praktikum" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Wölfel" subject1 = "Interaktive Systeme Vorlesung" subject2 = "Webdesign Vorlesung" subject3 = "Webdesign Praktikum" subject4 = "Interaktive Systeme Praktikum" subject5 = "Interaktive Systeme Vorlesung" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Schulten" subject1 = "Grundlagen BWL" subject2 = "Medienökonomie" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Hottong" subject1 = "Medientechnik Praktikum" subject2 = "Streaming Vorlesung" subject3 = "Videotechnik" subject4 = "Streaming Praktikum" presence = "0,1,2,3,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
+<lecturer name = "Aichele" subject1 = "AV Produktion Vorlesung" subject2 = "AV Produktion Vorlesung" subject3 = "GLF TV" subject4 = "Medientheorie" presence = "16,17,18,30,31,32"></lecturer>
+<lecturer name = "Anders" subject1 = "Webtechnologien Vorlesung" subject2 = "Projektstudium" subject3 = "Webtechnologien Praktikum" presence = "2,3,4,12,13,14,22,23,24"></lecturer>
+<lecturer name = "Delloro" subject1 = "Programmierung Praktikum" subject2 = "Interaktive Anwendungen Vorlesung" subject3 = "Elearning Vorlesung" subject4 = "Computergrafik Seminar" subject5 = "Interaktive Anwendungen Praktikum" subject6 = "Elearning Übung" subject7 = "Spieleentwicklung" presence = "10,11,12,13,26,27,28,29,30,31,32"></lecturer>
+<lecturer name = "Comes" subject1 = "Projektstudium" subject2 = "UX Design Seminar" subject3 = "Typografie" subject4 = "SEO" presence = "40,41,42,43"></lecturer>
+<lecturer name = "Teacher 1" subject1 = "Sprachenmodul 1" subject2 = "Sprachenmodul 2" presence = "16,17,18,26,27,28,36,37,38,40,41,42,43,44,45,46,47,48"></lecturer>
+<lecturer name = "Waldowski" subject1 = "GDV Vorlesung" subject2 = "GDV Übung" presence = "16,17,18,26,27,28"></lecturer>
+<lecturer name = "Dittler" subject1 = "Astrofoto" subject2 = "Medienpsychologie" presence = "36,37,38,39,40,41,42"></lecturer>
 <lecturer name = "Goertler" subject1 = "Zeichnen" presence = "30,31,32,33"></lecturer>
+<lecturer name = "Herbstreit" subject1 = "Grundlagen Unternehmensgründung" subject2 = "Marketing" presence = "17,18,19,27,28,29"></lecturer>
+<lecturer name = "Reusch" subject1 = "Audiotechnik" presence = "13,14,15,16,17,18,19,20,21,22,23"></lecturer>
+<lecturer name = "Lochmann" subject1 = "3D Character" subject2 = "VFX" presence = "13,14,15,16,17,18,19,20,21,22,23"></lecturer>
+<lecturer name = "Fries" subject1 = "Photografie" subject2 = "E-Commerce" presence = "13,14,15,16,17,18,19,20,21,22,23"></lecturer>
 
 <classroom name = "001" seats = "60" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Camera" equipment4 = "Tageslichtprojektor"></classroom>
 <classroom name = "002" seats = "60" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Lautsprecher" equipment4 = "Tageslichtprojektor"></classroom>
 <classroom name = "003" seats = "40" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Whiteboard" equipment4 = "Tageslichtprojektor"></classroom>
-<classroom name = "004" seats = "30" building = "I" equipment1 = "Beamer" equipment2 = "Whiteboard" equipment3 = "Computer"></classroom>
-<classroom name = "005" seats = "25" building = "I" equipment1 = "Computer" equipment2 = "Whiteboard" equipment3 = "Beamer"></classroom>
-<classroom name = "006" seats = "27" building = "I" equipment1 = "Whiteboard" equipment2 = "Tafel"></classroom>
-<classroom name = "101" seats = "30" building = "C" equipment1 = "Beamer" equipment2 = "Tafel"></classroom>
+<classroom name = "004" seats = "35" building = "I" equipment1 = "Beamer" equipment2 = "Whiteboard" equipment3 = "Computer"></classroom>
+<classroom name = "005" seats = "35" building = "I" equipment1 = "Computer" equipment2 = "Whiteboard" equipment3 = "Beamer"></classroom>
+<classroom name = "006" seats = "25" building = "I" equipment1 = "Whiteboard" equipment2 = "Tafel"></classroom>
+<classroom name = "101" seats = "35" building = "C" equipment1 = "Beamer" equipment2 = "Tafel"></classroom>
 <classroom name = "102" seats = "40" building = "C" equipment1 = "Computer" equipment2 = "Camera"></classroom>
 <classroom name = "103" seats = "40" building = "C" equipment1 = "Tafel" equipment2 = "Computer"></classroom>
 <classroom name = "104" seats = "35" building = "C" equipment1 = "Whiteboard" equipment2 = "Computer"></classroom>
