@@ -17,8 +17,9 @@ namespace SoftwareDesign
             Console.WriteLine("Hallo Stundenplan!");
             ReadData();
             CreateTimetable();
-            PrintTimetable("MIB1");
-            CheckWpm("MIB1");
+            UserInput();
+            //PrintTimetable("MIB1");
+            //CheckWpm("MIB1");
 
         }
         public static void CreateTimetable()
@@ -84,6 +85,7 @@ namespace SoftwareDesign
                     }
                 }
             }
+            Console.WriteLine("Stundenplan wurde erstellt.");
         }
         private static void CheckWpm(string semestername)
         {
@@ -126,6 +128,12 @@ namespace SoftwareDesign
                 Console.WriteLine(block);
                 Console.WriteLine();
             }
+        }
+        private static void PrintSubjectInfo(string name)
+        {
+            Console.WriteLine("Info über " + name);
+            Subject currentSubject = _allSubjects.Find(s => s.Name == name);
+            Console.WriteLine(currentSubject.Description);
         }
         private static void ReadData()
         {
@@ -234,6 +242,63 @@ namespace SoftwareDesign
                 }
             }
             reader.Close();
+            Console.WriteLine("Daten erfolgreich eingelesen");
+        }
+        private static void UserInput()
+        {
+            Console.WriteLine("Schreibe 'hilfe' um Infos zu den Befehlen zu bekommen");
+            bool quit = false;
+            while (quit == false)
+            {
+                string userInput;
+                string userConfirmation;
+                userInput = Console.ReadLine();
+                switch (userInput)
+                {
+                    case "hilfe":
+                        Console.WriteLine("Folgende Befehle sind möglich:");
+                        Console.WriteLine("'Daten erneuern'         Läd erneut Daten aus timetableData.xml.");
+                        Console.WriteLine("'Stundenplan erneuern'   Erneuert den Stundenplan.");
+                        Console.WriteLine("'Stundenplan anzeigen'   Zeigt einen bestimmten Stundenplan an.");
+                        Console.WriteLine("'Wpm überprüfen'         Zeigt verfügbare Wpm für dein Semester an.");
+                        Console.WriteLine("'Info über ein Fach'     Zeigt dir weitere Infos zu einem Fach an.");
+                        Console.WriteLine("'beenden'                Beendet das Programm.");
+                        break;
+                    case "Stundenplan erneuern":
+                        Console.WriteLine("Möchtest du den alten Stundenplan verwerfen und einen neuen aus den Daten erstellen? ja/nein");
+                        userConfirmation = Console.ReadLine();
+                        if (userConfirmation == "ja")
+                            CreateTimetable();
+                        break;
+                    case "Daten erneuern":
+                        Console.WriteLine("Möchtest du die Datei 'timetableData.xml' neu einlesen? ja/nein");
+                        userConfirmation = Console.ReadLine();
+                        if (userConfirmation == "ja")
+                            ReadData();
+                        break;
+                    case "Stundenplan anzeigen":
+                        Console.WriteLine("Welchen Stundenplan möchtest du anzeigen lassen? \nDu kannst dir den Stundenplan für ein Semester, einen Raum oder einen Dozenten anzeigen lassen.");
+                        userConfirmation = Console.ReadLine();
+                        PrintTimetable(userConfirmation);
+                        break;
+                    case "Wpm überprüfen":
+                        Console.WriteLine("In welchem Semester bist du?");
+                        userConfirmation = Console.ReadLine();
+                        CheckWpm(userConfirmation);
+                        break;
+                    case "Info über ein Fach":
+                        Console.WriteLine("Über welches Fach möchtest du mehr Infos?");
+                        userConfirmation = Console.ReadLine();
+                        PrintSubjectInfo(userConfirmation);
+                        break;
+                    case "beenden":
+                        quit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Falls du Hilfe brauchst, tippe 'hilfe' ein.");
+                        break;
+                }
+            }
         }
     }
 }
