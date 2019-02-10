@@ -5,9 +5,9 @@ namespace SoftwareDesign
 {
     class Semester
     {
-        public string name;
-        public int students;
-        public List<Subject> subjects = new List<Subject>();
-        public string[] availability = new string[50];
+        public string Name;
+        public int Students;
+        public List<Subject> Subjects = new List<Subject>();
+        public string[] Availability = new string[50];
     }
 }

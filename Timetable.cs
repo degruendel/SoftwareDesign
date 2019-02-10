@@ -5,7 +5,7 @@ namespace SoftwareDesign
 {
     class Timetable
     {
-        public string name;
-        public List<string> table = new List<string>();
+        public string Name;
+        public List<string> Table = new List<string>();
     }
 }

@@ -5,9 +5,9 @@ namespace SoftwareDesign
 {
     class Lecturer
     {
-        public string name;
-        public List<Subject> subjects = new List<Subject>();
+        public string Name;
+        public List<Subject> Subjects = new List<Subject>();
         //public List<string> presence = new List<string>();
-        public string[] availability = new string[50];
+        public string[] Availability = new string[50];
     }
 }

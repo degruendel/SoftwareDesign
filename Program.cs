@@ -7,53 +7,51 @@ namespace SoftwareDesign
 {
     class Program
     {
-        public static List<Semester> Semesters = new List<Semester>();
-        public static List<Lecturer> Lecturers = new List<Lecturer>();
-        public static List<Classroom> Classrooms = new List<Classroom>();
-        public static List<Subject> allSubjects = new List<Subject>();
-        public static List<Timetable> allTimetables = new List<Timetable>();
-
+        private static List<Semester> _allSemesters = new List<Semester>();
+        private static List<Lecturer> _allLecturers = new List<Lecturer>();
+        private static List<Classroom> _allClassrooms = new List<Classroom>();
+        private static List<Subject> _allSubjects = new List<Subject>();
+        private static List<Timetable> _allTimetables = new List<Timetable>();
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            readData();
-            createTimetable();
-            printTimetableSemester("MIB1");
-            checkWPM("MIB1");
+            Console.WriteLine("Hallo Stundenplan!");
+            ReadData();
+            CreateTimetable();
+            PrintTimetable("MIB1");
+            CheckWpm("MIB1");
 
         }
-
-        public static void createTimetable()
+        public static void CreateTimetable()
         {
-            int lengthlecturer = Lecturers.Count();
-            int lenghtsemester = Semesters.Count();
-            int lenghtblocks = 50;
+            int lengthLecturer = _allLecturers.Count();
+            int lenghtSemester = _allSemesters.Count();
+            int lenghtBlocks = 50;
 
-            for (int b = 0; b < lenghtblocks; b++)
+            for (int b = 0; b < lenghtBlocks; b++)
             {
 
-                for (int a = 0; a < lengthlecturer; a++)
+                for (int a = 0; a < lengthLecturer; a++)
                 {
-                    Lecturer selectedLecturer = Lecturers[a];
-                    for (int c = 0; c < lenghtsemester; c++)
+                    Lecturer selectedLecturer = _allLecturers[a];
+                    for (int c = 0; c < lenghtSemester; c++)
                     {
-                        Semester selectedSemester = Semesters[c];
-                        if (selectedSemester.availability[b] != "reserved")
+                        Semester selectedSemester = _allSemesters[c];
+                        if (selectedSemester.Availability[b] != "reserved")
                         {
-                            foreach (Subject selectedSubject in selectedLecturer.subjects)
+                            foreach (Subject selectedSubject in selectedLecturer.Subjects)
                             {
-                                if (selectedLecturer.availability[b] == "free")
+                                if (selectedLecturer.Availability[b] == "free")
                                 {
-                                    if (selectedSemester.subjects.Exists(e => e.name == selectedSubject.name))
+                                    if (selectedSemester.Subjects.Exists(s => s.Name == selectedSubject.Name))
                                     {
                                         List<Classroom> matchingRooms = new List<Classroom>();
-                                        foreach (Classroom room in Classrooms)
+                                        foreach (Classroom room in _allClassrooms)
                                         {
-                                            if (room.availability[b] != "reserved" && room.seats >= selectedSemester.students)
+                                            if (room.Availability[b] != "reserved" && room.Seats >= selectedSemester.Students)
                                             {
-                                                foreach (string require in selectedSubject.requirements)
+                                                foreach (string require in selectedSubject.Requirements)
                                                 {
-                                                    if (room.equipment.Contains(require))
+                                                    if (room.Equipment.Contains(require))
                                                     {
                                                         matchingRooms.Add(room);
                                                     }
@@ -65,19 +63,19 @@ namespace SoftwareDesign
                                         bool isEmpty = !matchingRooms.Any();
                                         if (isEmpty == false)
                                         {
-                                            Classroom smallest = matchingRooms[0];
+                                            Classroom smallestRoom = matchingRooms[0];
                                             foreach (Classroom matching in matchingRooms)
                                             {
-                                                if (matching.seats < smallest.seats)
+                                                if (matching.Seats < smallestRoom.Seats)
                                                 {
-                                                    smallest = matching;
+                                                    smallestRoom = matching;
                                                 }
                                             }
-                                            smallest.availability[b] = "reserved";
-                                            selectedSemester.subjects.Remove(selectedSubject);
-                                            selectedSemester.availability[b] = "reserved";
-                                            selectedLecturer.availability[b] = "reserved";
-                                            saveInTimetable(b, selectedSemester, selectedSubject, smallest, selectedLecturer);
+                                            smallestRoom.Availability[b] = "reserved";
+                                            selectedSemester.Subjects.Remove(selectedSubject);
+                                            selectedSemester.Availability[b] = "reserved";
+                                            selectedLecturer.Availability[b] = "reserved";
+                                            SaveInTimetable(b, selectedSemester, selectedSubject, smallestRoom, selectedLecturer);
                                         }
                                     }
                                 }
@@ -87,114 +85,51 @@ namespace SoftwareDesign
                 }
             }
         }
-
-        private static void checkWPM(string semestername)
+        private static void CheckWpm(string semestername)
         {
             Timetable currentTimetable;
             Timetable wpmTimetable;
-            currentTimetable = allTimetables.Find(t => t.name == semestername);
-            wpmTimetable = allTimetables.Find(w => w.name == "WPM");
+            currentTimetable = _allTimetables.Find(t => t.Name == semestername);
+            wpmTimetable = _allTimetables.Find(w => w.Name == "WPM");
             Console.WriteLine("Du kannst belegen: \n");
             for (int i = 0; i < 50; i++)
             {
-                if (currentTimetable.table[i].Contains("FREI"))
+                if (currentTimetable.Table[i].Contains("FREI"))
                 {
-                    if (!wpmTimetable.table[i].Contains("FREI"))
+                    if (!wpmTimetable.Table[i].Contains("FREI"))
                     {
-                        Console.WriteLine(wpmTimetable.table[i] + "\n");
+                        Console.WriteLine(wpmTimetable.Table[i] + "\n");
                     }
                 }
             }
         }
-
-        private static void saveInTimetable(int b, Semester selectedSemester, Subject selectedSubject, Classroom smallest, Lecturer selectedLecturer)
+        private static void SaveInTimetable(int b, Semester selectedSemester, Subject selectedSubject, Classroom smallestRoom, Lecturer selectedLecturer)
         {
             Timetable currentTimetable;
-            currentTimetable = allTimetables.Find(t => t.name == selectedSemester.name);
+            currentTimetable = _allTimetables.Find(t => t.Name == selectedSemester.Name);
             string stringBuilder;
-            stringBuilder = selectedSubject.name + " (" + b + ")\n" + smallest.building + "." + smallest.name + "\n" + selectedLecturer.name;
-            currentTimetable.table[b] = stringBuilder;
-            currentTimetable = allTimetables.Find(t => t.name == selectedLecturer.name);
-            stringBuilder = selectedSubject.name + "\n" + smallest.building + "." + smallest.name;
-            currentTimetable.table[b] = stringBuilder;
-            currentTimetable = allTimetables.Find(t => t.name == smallest.name);
-            stringBuilder = selectedSubject.name + "\n" + selectedLecturer.name + "\n" + selectedSemester.name;
-            currentTimetable.table[b] = stringBuilder;
+            stringBuilder = selectedSubject.Name + " (" + b + ")\n" + smallestRoom.Building + "." + smallestRoom.Name + "\n" + selectedLecturer.Name;
+            currentTimetable.Table[b] = stringBuilder;
+            currentTimetable = _allTimetables.Find(t => t.Name == selectedLecturer.Name);
+            stringBuilder = selectedSubject.Name + "\n" + smallestRoom.Building + "." + smallestRoom.Name;
+            currentTimetable.Table[b] = stringBuilder;
+            currentTimetable = _allTimetables.Find(t => t.Name == smallestRoom.Name);
+            stringBuilder = selectedSubject.Name + "\n" + selectedLecturer.Name + "\n" + selectedSemester.Name;
+            currentTimetable.Table[b] = stringBuilder;
         }
-
-        public static void printTimetableSemester(string name)
+        public static void PrintTimetable(string name)
         {
-            Console.WriteLine("\nTimetable for " + name + "\n");
-            Timetable print = allTimetables.Find(x => x.name == name);
-            foreach (string block in print.table)
+            Console.WriteLine("\nStundenplan für " + name + "\n");
+            Timetable print = _allTimetables.Find(x => x.Name == name);
+            foreach (string block in print.Table)
             {
                 Console.WriteLine(block);
                 Console.WriteLine();
             }
         }
-
-        /* public static void createTimetable()
+        private static void ReadData()
         {
-            foreach (Lecturer lecturer in Lecturers)
-            {
-                for (int i = 0; i < 50; i++)
-                {
-                    if (lecturer.availability[i] == "free")
-                    {
-                        int selectorsemester = 0;
-                        bool semesterIsFree = false;
-
-                        foreach (Subject subject in lecturer.subjects)
-                        {
-                            while (semesterIsFree == false)
-                            {
-                                Semester checkSemester = Semesters[selectorsemester];
-                                if (checkSemester.availability[i] == "reserved")
-                                {
-                                    selectorsemester++;
-                                }
-                                else
-                                {
-                                    semesterIsFree = true;
-                                }
-                            }
-                            Semester selectedsemester = Semesters[selectorsemester];
-                            if (selectedsemester.subjects.Exists(e => e.name == subject.name))
-                            {
-                                List<Classroom> matchingRooms = new List<Classroom>();
-                                foreach (Classroom room in Classrooms)
-                                {
-                                    if (room.availability[i] != "reserved" && room.seats >= selectedsemester.students)
-                                    {
-                                        foreach (string require in subject.requirements)
-                                        {
-                                            if (room.equipment.Contains(require))
-                                            {
-                                                matchingRooms.Add(room);
-                                            }
-                                        }
-                                    }
-                                }
-                                Classroom smallest = matchingRooms[0];
-                                foreach (Classroom matching in matchingRooms)
-                                {
-                                    if (matching.seats < smallest.seats)
-                                        smallest = matching;
-                                }
-                                smallest.availability[i] = "reserved";
-                                selectedsemester.subjects.Remove(subject);
-                                selectedsemester.availability[i] = "reserved";
-                                Console.WriteLine(lecturer.name + " unterrichtet " + subject.name + " in " + selectedsemester.name + " im Block " + i + " im Raum " + smallest.name);
-                            }
-                        }
-                    }
-                }
-            }
-        } */
-
-        private static void readData()
-        {
-            XmlTextReader reader = new XmlTextReader("data.xml");
+            XmlTextReader reader = new XmlTextReader("timetableData.xml");
             while (reader.Read())
             {
                 if (reader.NodeType == XmlNodeType.Element)
@@ -203,54 +138,54 @@ namespace SoftwareDesign
                     {
                         case "semester":
                             Semester semester = new Semester();
-                            Semesters.Add(semester);
+                            _allSemesters.Add(semester);
                             if (reader.HasAttributes)
                             {
                                 while (reader.MoveToNextAttribute())
                                 {
                                     if (reader.Name == "name")
-                                        semester.name = reader.Value;
+                                        semester.Name = reader.Value;
                                     Timetable timetable = new Timetable();
-                                    allTimetables.Add(timetable);
-                                    timetable.name = reader.Value;
+                                    _allTimetables.Add(timetable);
+                                    timetable.Name = reader.Value;
                                     for (int i = 0; i < 50; i++)
-                                        timetable.table.Add("Block " + i + "\nFREI\n");
+                                        timetable.Table.Add("Block " + i + "\nFREI\n");
 
                                     if (reader.Name == "students")
-                                        semester.students = Int32.Parse(reader.Value);
+                                        semester.Students = Int32.Parse(reader.Value);
                                     if (reader.Name.Contains("subject"))
                                     {
-                                        Subject semestersubject = allSubjects.Find(s => s.name == reader.Value);
-                                        semester.subjects.Add(semestersubject);
+                                        Subject semestersubject = _allSubjects.Find(s => s.Name == reader.Value);
+                                        semester.Subjects.Add(semestersubject);
                                     }
                                 }
                             }
                             break;
                         case "lecturer":
                             Lecturer lecturer = new Lecturer();
-                            Lecturers.Add(lecturer);
+                            _allLecturers.Add(lecturer);
                             if (reader.HasAttributes)
                             {
                                 while (reader.MoveToNextAttribute())
                                 {
                                     if (reader.Name == "name")
-                                        lecturer.name = reader.Value;
+                                        lecturer.Name = reader.Value;
                                     Timetable timetable = new Timetable();
-                                    allTimetables.Add(timetable);
-                                    timetable.name = reader.Value;
+                                    _allTimetables.Add(timetable);
+                                    timetable.Name = reader.Value;
                                     for (int i = 0; i < 50; i++)
-                                        timetable.table.Add("Block " + i + "\nFREI\n");
+                                        timetable.Table.Add("Block " + i + "\nFREI\n");
                                     if (reader.Name.Contains("subject"))
                                     {
-                                        Subject lecturersubject = allSubjects.Find(s => s.name == reader.Value);
-                                        lecturer.subjects.Add(lecturersubject);
+                                        Subject lecturersubject = _allSubjects.Find(s => s.Name == reader.Value);
+                                        lecturer.Subjects.Add(lecturersubject);
                                     }
                                     if (reader.Name == "presence")
                                     {
                                         string[] words = reader.Value.Split(',');
                                         foreach (string word in words)
                                         {
-                                            lecturer.availability[System.Convert.ToInt32(word)] = "free";
+                                            lecturer.Availability[System.Convert.ToInt32(word)] = "free";
                                         }
                                     }
                                 }
@@ -258,40 +193,40 @@ namespace SoftwareDesign
                             break;
                         case "classroom":
                             Classroom classroom = new Classroom();
-                            Classrooms.Add(classroom);
+                            _allClassrooms.Add(classroom);
                             if (reader.HasAttributes)
                             {
                                 while (reader.MoveToNextAttribute())
                                 {
                                     if (reader.Name == "name")
-                                        classroom.name = reader.Value;
+                                        classroom.Name = reader.Value;
                                     Timetable timetable = new Timetable();
-                                    allTimetables.Add(timetable);
-                                    timetable.name = reader.Value;
+                                    _allTimetables.Add(timetable);
+                                    timetable.Name = reader.Value;
                                     for (int i = 0; i < 50; i++)
-                                        timetable.table.Add("Block " + i + "\nFREI\n");
+                                        timetable.Table.Add("Block " + i + "\nFREI\n");
                                     if (reader.Name == "seats")
-                                        classroom.seats = Int32.Parse(reader.Value);
+                                        classroom.Seats = Int32.Parse(reader.Value);
                                     if (reader.Name == "building")
-                                        classroom.building = reader.Value;
+                                        classroom.Building = reader.Value;
                                     if (reader.Name.Contains("equipment"))
-                                        classroom.equipment.Add(reader.Value);
+                                        classroom.Equipment.Add(reader.Value);
                                 }
                             }
                             break;
                         case "subject":
                             Subject subject = new Subject();
-                            allSubjects.Add(subject);
+                            _allSubjects.Add(subject);
                             if (reader.HasAttributes)
                             {
                                 while (reader.MoveToNextAttribute())
                                 {
                                     if (reader.Name == "name")
-                                        subject.name = reader.Value;
+                                        subject.Name = reader.Value;
                                     if (reader.Name == "description")
-                                        subject.description = reader.Value;
+                                        subject.Description = reader.Value;
                                     if (reader.Name.Contains("requirement"))
-                                        subject.requirements.Add(reader.Value);
+                                        subject.Requirements.Add(reader.Value);
                                 }
                             }
                             break;

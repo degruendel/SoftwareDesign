@@ -5,11 +5,11 @@ namespace SoftwareDesign
 {
     class Classroom
     {
-        public string name;
+        public string Name;
         //public bool availability = true;
-        public int seats;
-        public string building;
-        public List<string> equipment = new List<string>();
-        public string[] availability = new string[50];
+        public int Seats;
+        public string Building;
+        public List<string> Equipment = new List<string>();
+        public string[] Availability = new string[50];
     }
 }

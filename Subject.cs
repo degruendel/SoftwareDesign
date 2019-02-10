@@ -5,8 +5,8 @@ namespace SoftwareDesign
 {
     class Subject
     {
-        public string name;
-        public string description;
-        public List<string> requirements = new List<string>();
+        public string Name;
+        public string Description;
+        public List<string> Requirements = new List<string>();
     }
 }
