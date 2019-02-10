@@ -18,7 +18,9 @@ namespace SoftwareDesign
             Console.WriteLine("Hello World!");
             readData();
             createTimetable();
-            printTimetableSemester("102");
+            printTimetableSemester("MIB1");
+            checkWPM("MIB1");
+
         }
 
         public static void createTimetable()
@@ -86,12 +88,31 @@ namespace SoftwareDesign
             }
         }
 
-        static void saveInTimetable(int b, Semester selectedSemester, Subject selectedSubject, Classroom smallest, Lecturer selectedLecturer)
+        private static void checkWPM(string semestername)
+        {
+            Timetable currentTimetable;
+            Timetable wpmTimetable;
+            currentTimetable = allTimetables.Find(t => t.name == semestername);
+            wpmTimetable = allTimetables.Find(w => w.name == "WPM");
+            Console.WriteLine("Du kannst belegen: \n");
+            for (int i = 0; i < 50; i++)
+            {
+                if (currentTimetable.table[i].Contains("FREI"))
+                {
+                    if (!wpmTimetable.table[i].Contains("FREI"))
+                    {
+                        Console.WriteLine(wpmTimetable.table[i] + "\n");
+                    }
+                }
+            }
+        }
+
+        private static void saveInTimetable(int b, Semester selectedSemester, Subject selectedSubject, Classroom smallest, Lecturer selectedLecturer)
         {
             Timetable currentTimetable;
             currentTimetable = allTimetables.Find(t => t.name == selectedSemester.name);
             string stringBuilder;
-            stringBuilder = selectedSubject.name + "\n" + smallest.building + "." + smallest.name + "\n" + selectedLecturer.name;
+            stringBuilder = selectedSubject.name + " (" + b + ")\n" + smallest.building + "." + smallest.name + "\n" + selectedLecturer.name;
             currentTimetable.table[b] = stringBuilder;
             currentTimetable = allTimetables.Find(t => t.name == selectedLecturer.name);
             stringBuilder = selectedSubject.name + "\n" + smallest.building + "." + smallest.name;

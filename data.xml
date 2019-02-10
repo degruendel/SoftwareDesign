@@ -30,6 +30,10 @@
 <subject name = "Elearning" description = "" requirement1 = "Computer"></subject>
 <subject name = "Marketingkonzeption" description = "" requirement1 = "Marketingkonzeption" requirement2 = "Tafel"></subject>
 <subject name = "Medientheorie" description = "" requirement1 = "Whiteboard"></subject>
+<subject name = "GLF TV" description = "" requirement1 = "Camera"></subject>
+<subject name = "Astrofoto" description = "" requirement1 = "Camera"></subject>
+<subject name = "Spieleentwicklung" description = "" requirement1 = "Computer"></subject>
+<subject name = "Zeichnen" description = "" requirement1 = "Tafel"></subject>
 
 <semester name = "MIB1" students = "35" subject1 = "MINT Grundlagen" subject2 = "allg BWL" subject3 = "Programmierung" subject4 = "Mediengestaltung" subject5 = "Medientechnik"></semester>
 <semester name = "MIB2" students = "30" subject1 = "Mathematik" subject2 = "Medienwirtschaft" subject3 = "Interaktive Systeme" subject4 = "UX Design" subject5 = "Computergrafik"></semester>
@@ -49,18 +53,22 @@
 <semester name = "MKB5" students = "20" subject1 = "Projektstudium" subject2 = "Interface Design" subject3 = "Marketingkonzeption"></semester>
 <semester name = "MKB6" students = "30" subject1 = "Medientheorie" subject2 = "Sprachenmodul"></semester>
 
+<semester name = "WPM" students = "20" subject1 = "GLF TV" subject2 = "Astrofoto" subject3 = "Spieleentwicklung" subject4 = "Zeichnen"></semester>
+
 <lecturer name = "Müller" subject1 = "Computergrafik" subject2 = "Programmierung" presence = "12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 <lecturer name = "Schneider" subject1 = "Mathematik" subject2 = "MINT Grundlagen" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 <lecturer name = "Krach" subject1 = "UX Design" subject2 = "Mediengestaltung" subject3 = "Interface Design" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 <lecturer name = "Wölfel" subject1 = "Interaktive Systeme" subject2 = "Webdesign" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 <lecturer name = "Schulten" subject1 = "allg BWL" subject2 = "Medienwirtschaft" subject3 = "Medienmanagement" subject4 = "Marketingkonzeption" presence = "0,1,2,3,4,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
 <lecturer name = "Hottong" subject1 = "Medientechnik" subject2 = "Streaming" presence = "0,1,2,3,6,7,11,12,13,17,18,30,31,32,33,34,35,41,42"></lecturer>
-<lecturer name = "Aichele" subject1 = "AV Produktion" subject2 = "Kreativkonzeption" subject3 = "Medientheorie" presence = "16,17,18,30,31,32"></lecturer>
+<lecturer name = "Aichele" subject1 = "AV Produktion" subject2 = "Kreativkonzeption" subject3 = "Medientheorie" subject4 = "GLF TV" presence = "16,17,18,30,31,32"></lecturer>
 <lecturer name = "Anders" subject1 = "Webtechnologien" subject2 = "Projektstudium" presence = "2,3,4,12,13,14,22,23,24"></lecturer>
 <lecturer name = "Delloro" subject1 = "Programmierung" subject2 = "Interaktive Anwendungen" subject3 = "Elearning" presence = "10,11,12,13,26,27,28,29,30,31,32"></lecturer>
 <lecturer name = "Comes" subject1 = "Textkonzeption" subject2 = "UX Design" subject3 = "Projektstudium" presence = "40,41,42,43"></lecturer>
 <lecturer name = "Teacher 1" subject1 = "Sprachenmodul" presence = "16,17,18,26,27,28,36,37,38"></lecturer>
 <lecturer name = "Waldowski" subject1 = "GDV" presence = "16,17,18,26,27,28"></lecturer>
+<lecturer name = "Dittler" subject1 = "Astrofoto" presence = "36,37,38,39"></lecturer>
+<lecturer name = "Goertler" subject1 = "Zeichnen" presence = "30,31,32,33"></lecturer>
 
 <classroom name = "001" seats = "60" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Camera" equipment4 = "Tageslichtprojektor"></classroom>
 <classroom name = "002" seats = "60" building = "I" equipment1 = "Beamer" equipment2 = "Tafel" equipment3 = "Lautsprecher" equipment4 = "Tageslichtprojektor"></classroom>
