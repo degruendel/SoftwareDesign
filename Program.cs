@@ -18,9 +18,6 @@ namespace SoftwareDesign
             ReadData();
             CreateTimetable();
             UserInput();
-            //PrintTimetable("MIB1");
-            //CheckWpm("MIB1");
-
         }
         public static void CreateTimetable()
         {
