@@ -74,7 +74,6 @@ namespace SoftwareDesign
                                             selectedSemester.Availability[b] = "reserved";
                                             selectedLecturer.Availability[b] = "reserved";
                                             SaveInTimetable(b, selectedSemester, selectedSubject, smallestRoom, selectedLecturer);
-                                            Console.WriteLine(selectedLecturer.Name + selectedSubject.Name + selectedSemester.Name);
                                         }
                                     }
                                 }
