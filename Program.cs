@@ -16,40 +16,6 @@ namespace SoftwareDesign
             Console.WriteLine("Hello World!");
             readData();
             createTimetable();
-            //Console.WriteLine(semester.name);
-
-            /* int c = Students.Count;
-            int d = Lecturers.Count;
-            int e = Classrooms.Count;
-            foreach (Student i in Students)
-            {
-                Console.WriteLine(i.name + " " + i.semester);
-            }
-            Console.WriteLine("Es sind " + c + " Studenten registriert.");
-            foreach (Lecturer i in Lecturers)
-            {
-                Console.WriteLine(i.name);
-                foreach (Subject j in i.subjects)
-                {
-                    Console.WriteLine(j.name);
-                }
-                foreach (string k in i.presence)
-                {
-                    Console.WriteLine(k);
-                }
-            }
-            Console.WriteLine("Es sind " + d + " Dozenten registriert.");
-            foreach (Classroom i in Classrooms)
-            {
-                Console.WriteLine(i.name + " " + i.building);
-                foreach (Equipment j in i.equipment)
-                {
-                    Console.WriteLine(j.name);
-                }
-            }
-            Console.WriteLine("Es sind " + e + " Räume registriert."); */
-            //Lecturer L = new Lecturer();
-            //L.info("Müller");
         }
 
         public static void createTimetable()
@@ -62,21 +28,22 @@ namespace SoftwareDesign
                     {
                         int selectorsemester = 0;
                         bool semesterIsFree = false;
-                        while (semesterIsFree == false)
-                        {
-                            Semester checkSemester = Semesters[selectorsemester];
-                            if (checkSemester.availability[i] == "reserved")
-                            {
-                                selectorsemester++;
-                            }
-                            else
-                            {
-                                semesterIsFree = true;
-                            }
-                        }
-                        Semester selectedsemester = Semesters[selectorsemester];
+
                         foreach (Subject subject in lecturer.subjects)
                         {
+                            while (semesterIsFree == false)
+                            {
+                                Semester checkSemester = Semesters[selectorsemester];
+                                if (checkSemester.availability[i] == "reserved")
+                                {
+                                    selectorsemester++;
+                                }
+                                else
+                                {
+                                    semesterIsFree = true;
+                                }
+                            }
+                            Semester selectedsemester = Semesters[selectorsemester];
                             if (selectedsemester.subjects.Exists(e => e.name == subject.name))
                             {
                                 List<Classroom> matchingRooms = new List<Classroom>();
@@ -110,83 +77,6 @@ namespace SoftwareDesign
             }
         }
 
-        /* public static void createTimetable()
-        {
-            int course = 0;
-            foreach (Semester sem in Semesters)
-            {
-                int studentamount = sem.students;
-                foreach (Subject sub in sem.subjects)
-                {
-                    List<Classroom> matchingrooms = new List<Classroom>();
-                    foreach (Classroom cla in Classrooms)
-                    {
-                        if (cla.availability[course] == null && cla.seats >= studentamount)
-                        {
-                            foreach (string req in sub.requirements)
-                            {
-                                if (cla.equipment.Contains(req))
-                                    matchingrooms.Add(cla);
-                            }
-                        }
-                    }
-                    Classroom smallest = matchingrooms[0];
-                    foreach (Classroom mat in matchingrooms)
-                    {
-                        if (mat.seats < smallest.seats)
-                            smallest = mat;
-                    }
-                    Console.WriteLine("Found: " + smallest.name);
-                    Classroom found = Classrooms.Find(room => room.name == smallest.name);
-                    found.availability[course] == "reserved";
-
-                    List<Lecturer> matchinglecturers = new List<Lecturer>();
-                    foreach (Lecturer lec in Lecturers)
-                    {
-                        if (lec.subjects.Contains(sub))
-                        {
-
-                        }
-                    }
-                }
-            }
-        } */
-        /* private static void createTimetable()
-        {
-            foreach (Semester semester in Semesters)
-            {
-                foreach (Subject subject in semester.subjects)
-                {
-                    //Sucht ale Räume, die groß genug sind
-                    List<Classroom> matchsize = Classrooms.FindAll(room => room.seats >= semester.students || room.availability == true);
-                    
-                    foreach (Classroom room in matchsize.ToList())
-                    {
-                        foreach (String require in subject.requirements)
-                        {
-                            //Equipment nicht ausreichend
-                            if (!room.equipment.Contains(require))
-                            {
-                                matchsize.Remove(room);
-                            }
-                        }
-                    }
-                    bool isEmpty = !matchsize.Any();
-                        if (isEmpty)
-                            Console.WriteLine("Keine Räume verfügbar.");
-                        else
-                        {
-                            int countseats;
-                            foreach (Classroom room in matchsize.ToList)
-                            {
-                                countseats = room.seats - semester.students;
-
-                            }
-                        }
-                            Console.WriteLine("For " + semester.name + " " + subject.name + " Raum: " + matchsize.All.name + " " + matchsize.All.seats);
-                }
-            }
-        } */
         private static void readData()
         {
             XmlTextReader reader = new XmlTextReader("data.xml");
