@@ -68,10 +68,10 @@
 <classroom name = "004" seats = "30" building = "I" equipment1 = "Beamer" equipment2 = "Whiteboard" equipment3 = "Computer"></classroom>
 <classroom name = "005" seats = "25" building = "I" equipment1 = "Computer" equipment2 = "Whiteboard" equipment3 = "Beamer"></classroom>
 <classroom name = "006" seats = "27" building = "I" equipment1 = "Whiteboard" equipment2 = "Tafel"></classroom>
-<classroom name = "101" seats = "30" building = "I" equipment1 = "Beamer" equipment2 = "Tafel"></classroom>
-<classroom name = "102" seats = "40" building = "I" equipment1 = "Computer" equipment2 = "Camera"></classroom>
-<classroom name = "103" seats = "40" building = "I" equipment1 = "Tafel" equipment2 = "Computer"></classroom>
-<classroom name = "104" seats = "35" building = "I" equipment1 = "Whiteboard" equipment2 = "Computer"></classroom>
+<classroom name = "101" seats = "30" building = "C" equipment1 = "Beamer" equipment2 = "Tafel"></classroom>
+<classroom name = "102" seats = "40" building = "C" equipment1 = "Computer" equipment2 = "Camera"></classroom>
+<classroom name = "103" seats = "40" building = "C" equipment1 = "Tafel" equipment2 = "Computer"></classroom>
+<classroom name = "104" seats = "35" building = "C" equipment1 = "Whiteboard" equipment2 = "Computer"></classroom>
 
 
 </data>

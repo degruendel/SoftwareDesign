@@ -11,11 +11,14 @@ namespace SoftwareDesign
         public static List<Lecturer> Lecturers = new List<Lecturer>();
         public static List<Classroom> Classrooms = new List<Classroom>();
         public static List<Subject> allSubjects = new List<Subject>();
+        public static List<Timetable> allTimetables = new List<Timetable>();
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
             readData();
             createTimetable();
+            printTimetableSemester("102");
         }
 
         public static void createTimetable()
@@ -72,16 +75,40 @@ namespace SoftwareDesign
                                             selectedSemester.subjects.Remove(selectedSubject);
                                             selectedSemester.availability[b] = "reserved";
                                             selectedLecturer.availability[b] = "reserved";
-                                            Console.WriteLine(selectedLecturer.name + " unterrichtet " + selectedSubject.name + " in " + selectedSemester.name + " im Block " + b + " im Raum " + smallest.name);
-
+                                            saveInTimetable(b, selectedSemester, selectedSubject, smallest, selectedLecturer);
                                         }
-
                                     }
                                 }
                             }
                         }
                     }
                 }
+            }
+        }
+
+        static void saveInTimetable(int b, Semester selectedSemester, Subject selectedSubject, Classroom smallest, Lecturer selectedLecturer)
+        {
+            Timetable currentTimetable;
+            currentTimetable = allTimetables.Find(t => t.name == selectedSemester.name);
+            string stringBuilder;
+            stringBuilder = selectedSubject.name + "\n" + smallest.building + "." + smallest.name + "\n" + selectedLecturer.name;
+            currentTimetable.table[b] = stringBuilder;
+            currentTimetable = allTimetables.Find(t => t.name == selectedLecturer.name);
+            stringBuilder = selectedSubject.name + "\n" + smallest.building + "." + smallest.name;
+            currentTimetable.table[b] = stringBuilder;
+            currentTimetable = allTimetables.Find(t => t.name == smallest.name);
+            stringBuilder = selectedSubject.name + "\n" + selectedLecturer.name + "\n" + selectedSemester.name;
+            currentTimetable.table[b] = stringBuilder;
+        }
+
+        public static void printTimetableSemester(string name)
+        {
+            Console.WriteLine("\nTimetable for " + name + "\n");
+            Timetable print = allTimetables.Find(x => x.name == name);
+            foreach (string block in print.table)
+            {
+                Console.WriteLine(block);
+                Console.WriteLine();
             }
         }
 
@@ -162,6 +189,12 @@ namespace SoftwareDesign
                                 {
                                     if (reader.Name == "name")
                                         semester.name = reader.Value;
+                                    Timetable timetable = new Timetable();
+                                    allTimetables.Add(timetable);
+                                    timetable.name = reader.Value;
+                                    for (int i = 0; i < 50; i++)
+                                        timetable.table.Add("Block " + i + "\nFREI\n");
+
                                     if (reader.Name == "students")
                                         semester.students = Int32.Parse(reader.Value);
                                     if (reader.Name.Contains("subject"))
@@ -181,6 +214,11 @@ namespace SoftwareDesign
                                 {
                                     if (reader.Name == "name")
                                         lecturer.name = reader.Value;
+                                    Timetable timetable = new Timetable();
+                                    allTimetables.Add(timetable);
+                                    timetable.name = reader.Value;
+                                    for (int i = 0; i < 50; i++)
+                                        timetable.table.Add("Block " + i + "\nFREI\n");
                                     if (reader.Name.Contains("subject"))
                                     {
                                         Subject lecturersubject = allSubjects.Find(s => s.name == reader.Value);
@@ -206,6 +244,11 @@ namespace SoftwareDesign
                                 {
                                     if (reader.Name == "name")
                                         classroom.name = reader.Value;
+                                    Timetable timetable = new Timetable();
+                                    allTimetables.Add(timetable);
+                                    timetable.name = reader.Value;
+                                    for (int i = 0; i < 50; i++)
+                                        timetable.table.Add("Block " + i + "\nFREI\n");
                                     if (reader.Name == "seats")
                                         classroom.seats = Int32.Parse(reader.Value);
                                     if (reader.Name == "building")
